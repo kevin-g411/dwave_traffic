@@ -7,7 +7,7 @@
 
 拡張子のないものはエクセル内のマクロを（見やすいかなと思い）掲載しました。
 名前にModuleとつくものは独立するマクロで、
-つかないものはEntireModule内の個別のマクロです。（EntireModuleと中身は重複している）
+つかないものはModule1, Module4内の個別のマクロです。（EntireModuleと中身は重複している）
 
 構造としては
 xlwingsModule
