@@ -1,0 +1,13 @@
+Sub exe()
+'
+' exe Macro
+'
+Call save
+
+Call calc
+
+Call python_exe
+
+Call output
+'
+End Sub
