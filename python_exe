@@ -1,0 +1,7 @@
+Public Sub python_exe()
+'
+' python_exe Macro
+'
+     Call RunPython("import traffic; traffic.callDwave('" & stamp & "')")
+'
+End Sub
