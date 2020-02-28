@@ -29,9 +29,11 @@ Module1
 ┠start（「準備」ボタンで実行：表など「を作成）
 
 Module4
+
 ┠（「実行」ボタンで実行：下のマクロを順に実行）
 
 ┠save
+
 ┠calc
 
 ┠python_exe
