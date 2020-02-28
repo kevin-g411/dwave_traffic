@@ -1,0 +1,57 @@
+Sub save()
+'
+' save Macro
+'
+
+Dim cars As Integer
+Dim tate As Integer, yoko As Integer
+Dim segments As Integer, routes As Integer
+Dim i As Integer, j As Integer, k As Integer
+
+Worksheets("params").Cells.Clear
+        
+Worksheets("params").Cells(1, 1).Value = Worksheets(1).Range("W2")
+Worksheets("params").Cells(1, 2).Value = Worksheets(1).Range("W3")
+Worksheets("params").Cells(1, 3).Value = Worksheets(1).Range("W4")
+
+Worksheets("params").Cells(1, 4).Value = Worksheets(1).Range("W6")
+Worksheets("params").Cells(1, 5).Value = Worksheets(1).Range("W7")
+
+cars = Worksheets(1).Range("W2")
+For i = 1 To cars
+    Worksheets("params").Cells(4, i).Value = Worksheets(1).Cells(13 + i, 24)
+Next i
+
+tate = Worksheets(1).Range("W3")
+yoko = Worksheets(1).Range("W4")
+segments = tate + yoko
+routes = fact(segments) / (fact(tate) * fact(yoko))
+k = 1
+For i = 0 To routes - 1
+    For j = 0 To segments - 1
+        Worksheets("params").Cells(2, k).Value = Worksheets(1).Cells(13 + i, 6 + j)
+        k = k + 1
+    Next j
+Next i
+
+k = 1
+For i = 0 To routes - 1
+    For j = 0 To segments
+        Worksheets("params").Cells(3, k).Value = Worksheets(1).Cells(13 + i, 7 + segments + j)
+        k = k + 1
+    Next j
+Next i
+
+Application.DisplayAlerts = False
+    
+stamp = Format(Now, "mmdd_hhmm")
+Worksheets("params").Copy
+ActiveWorkbook.SaveAs FileName:="C:\Users\watanabe.kevin\Desktop\d-wave_traffic\params\prm" + stamp + ".csv", _
+    FileFormat:=xlCSV
+ActiveWindow.Close
+    
+Application.DisplayAlerts = True
+
+
+'
+End Sub
